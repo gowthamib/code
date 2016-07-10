@@ -1,48 +1,28 @@
 # code
-int main(void) {
-int n,i,j=0,a[100],a1[100];
-scanf("%d",&n);
-for(i=0;i<n;i++)
-scanf("%d",&a[i]);
-for(i=0;i<n;i++)
+void main ()
 {
-int c=0;
-while(a[i])
-{
-int rem=a[i]%2;
-a[i]=a[i]/2;
-	c++;
-}
-a1[j++]=c;
-}
-for(i=0;i<n;i++)
-{
-for(j=0;j<n;j++)
-{
-if(a1[i]>a1[j])
-{
-int t=a1[i];
-a1[i]=a1[j];
-a1[j]=t;
-t=a[i];
-a[i]=a[j];
-a[j]=t;
-}
-else if(a1[i]==a1[j])
-{
-if(a[i]>a[j])
-{
-int t=a1[i];
-a1[i]=a1[j];
-a1[j]=t;
-t=a[i];
-a[i]=a[j];
-a[j]=t;
-}	
-}
-}
-}
-for(i=0;i<n;i++)
-printf("%d ",a[i]);
-return 0;
+    int number[30];
+    int i, j, a, n;
+    printf("Enter the value of N\n");
+    scanf("%d", &n);
+    printf("Enter the numbers \n");
+    for (i = 0; i < n; ++i)
+    scanf("%d", &number[i]);
+    for (i = 0; i < n; ++i)
+    {
+        for (j = i + 1; j < n; ++j)
+        {
+if (number[i] < number[j])
+   {
+     a = number[i];
+       number[i] = number[j];
+       number[j] = a;
+      }
+        }
+    }
+    printf("The numbers arranged in descending order are given below\n");
+    for (i = 0; i < n; ++i)
+    {
+        printf("%d\n", number[i]);
+    }
 }
